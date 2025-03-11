@@ -1,0 +1,592 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<!-- In the head section, update the viewport meta tag -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AnimeVerse</title>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">  
+    <link rel="stylesheet" href="styles.css">  
+    
+</head>  
+<body>  
+    
+    <div class="video-background">
+        <video autoplay muted loop playsinline id="myVideo" poster="animate-poster.jpg">
+            <source src="animate.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    
+    <div class="header">
+        <div class="hamburger-menu">
+            <div class="hamburger-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-items">
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#watchlist"><i class="fas fa-list"></i> Watch List</a></li>
+                    <li><a href="#history"><i class="fas fa-history"></i> Search History</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="logo">
+            <img src="icon.jpg" alt="AnimeVerse">
+        </div>
+        <nav class="menu">
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#trending">Trending</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#genres">Genres</a></li>
+                <li><a href="#new">New</a></li>
+            </ul>
+        </nav>
+        
+        <div class="search-container">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="search-dropdown">
+                <input type="text" class="search-bar" placeholder="Search anime...">
+                <div class="search-loading"></div>
+                <div class="search-suggestions"></div>
+            </div>
+            <div class="search-results"></div>
+        </div>
+        
+        <div class="login">
+           <a href="login.html"><h3>Login</h3></a> 
+        
+        </div>
+        
+        <div class="profile-container">
+            <div class="profile-icon">
+                <img src="profile.png" alt="Profile">
+            </div>
+            <div class="profile-options">
+                <span> <img src="profile.png" alt="Profile"></span>
+                <ul>
+                    <li><a href="profile.html">My Profile</a></li>
+                    <li>Watchlist</li>
+                    <li>Settings</li>
+                    <li>Logout</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+     
+
+    <!-- Add Slideshow Section -->
+    <div class="hero-slideshow">
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <div class="slide-content">
+                    <img src="." alt="Featured Anime 1" class="slide-image">
+                    <div class="slide-info">
+                        <h2 class="slide-title"></h2>
+                        <p class="slide-description"></p>
+                        <button class="watch-now">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide fade">
+                <div class="slide-content">
+                    <img src="." alt="Featured Anime 2" class="slide-image">
+                    <div class="slide-info">
+                        <h2 class="slide-title"></h2>
+                        <p class="slide-description"></p>
+                        <button class="watch-now">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slide fade">
+                <div class="slide-content">
+                    <img src="." alt="Featured Anime 3" class="slide-image">
+                    <div class="slide-info">
+                        <h2 class="slide-title"></h2>
+                        <p class="slide-description"></p>
+                        <button class="watch-now">Watch Now</button>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="slideshow-btn prev">❮</button>
+            <button class="slideshow-btn next">❯</button>
+            
+            <div class="slideshow-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+    <!--Slide show end-->
+    <!--Main Body Anime start-->
+    <div class="body-container">  
+        <section class="anime-section" id="trending-section">  
+            <h2>Trending Now</h2>  
+            <div class="infinite-scroll-container">  
+                <div class="slider-container"> 
+               <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="grid-container trending-grid" data-loading="true" data-page="1">  <!-- Added 'trending-grid' class and data-page -->  
+                    <!-- Initial skeleton loaders (these will be removed by JS after loading) -->  
+                    
+                    
+                    </div>  
+                    <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                
+                    </div>
+                <button class="load-more" data-section="trending" data-page="1">Load More</button> <!-- Added data-page -->  
+                
+            </div>  
+        </section>  
+    </div>  
+   
+    
+
+    <div class="body-container2">  
+        <section class="anime-section" id="new-section">  
+            <h2>New Releases</h2>  
+            <div class="infinite-scroll-container"> 
+                <div class="slider-container"> 
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>  
+                <div class="grid-container new-grid" data-loading="true" data-page="1">  <!-- Added 'new-grid' class and data-page -->  
+                    <!-- Initial skeleton loaders -->  
+                    
+                    </div>
+                    <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                  </div> 
+                <button class="load-more" data-section="new" data-page="1">Load More</button> <!-- Added data-page -->  
+            </div>
+        </section>  
+    </div>  
+     <!--Main Body Anime End-->
+    
+    
+   
+    <!-- Anime api js-->
+    
+    <script>
+        const BASE_URL = 'https://api.jikan.moe/v4';
+        let currentSlidePosition = 0;
+        
+        // Update the fetchAnimeData function with delay and retry logic
+        async function fetchAnimeData(section, page = 1) {
+            const endpoints = {
+                trending: '/top/anime',
+                popular: '/anime?order_by=popularity',
+                new: '/seasons/now'
+            };
+        
+            const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+            const maxRetries = 3;
+            let retries = 0;
+        
+            while (retries < maxRetries) {
+                try {
+                    const response = await fetch(`${BASE_URL}${endpoints[section]}?page=${page}`);
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    const data = await response.json();
+                    return data.data;
+                } catch (error) {
+                    console.error(`Attempt ${retries + 1} failed:`, error);
+                    retries++;
+                    if (retries < maxRetries) {
+                        await delay(1000 * retries); // Exponential backoff
+                    }
+                }
+            }
+            return [];
+        }
+        
+        // Update the loadContent function with better error handling
+        async function loadContent(section) {
+            const container = document.querySelector(`.${section}-grid`);
+            const loadMoreBtn = document.querySelector(`[data-section="${section}"]`);
+            
+            if (!container || !loadMoreBtn) {
+                console.error('Required elements not found');
+                return;
+            }
+        
+            const page = parseInt(container.dataset.page) || 1;
+            
+            try {
+                loadMoreBtn.disabled = true;
+                loadMoreBtn.textContent = 'Loading...';
+                
+                // Add loading indicator
+                container.style.opacity = '0.6';
+                
+                const animes = await fetchAnimeData(section, page);
+                
+                if (!Array.isArray(animes)) {
+                    throw new Error('Invalid API response format');
+                }
+        
+                if (animes.length > 0) {
+                    const content = animes.map(anime => `
+                        <div class="content-box" data-anime-id="${anime.mal_id}">
+                            <div class="cover-container">
+                                <img src="${anime.images?.jpg?.large_image_url || ''}" alt="${anime.title}" class="cover-image">
+                                <div class="play-overlay">
+                                    <i class="fas fa-play"></i>
+                                </div>
+                            </div>
+                            <div class="content-details">
+                                <h3 class="title">${anime.title || 'Unknown Title'}</h3>
+                                <div class="subtitle-container">
+                                    <span class="episode-count">${anime.episodes || '?'} Episodes</span>
+                                    <span class="rating">★ ${anime.score || 'N/A'}</span>
+                                </div>
+                                <div class="additional-info">
+                                    <span class="year">${anime.year || 'N/A'}</span>
+                                    <span class="type">${anime.type || 'TV'}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+        
+                    // Update content
+                    if (page === 1) {
+                        container.innerHTML = content;
+                    } else {
+                        container.insertAdjacentHTML('beforeend', content);
+                    }
+                    
+                    container.dataset.page = page + 1;
+                    container.style.opacity = '1';
+                    
+                    // Update load more button
+                    loadMoreBtn.style.display = animes.length < 25 ? 'none' : 'block';
+                    
+                    // Initialize animations for new content
+                    observeContentBoxes();
+                }
+            } catch (error) {
+                console.error(`Error loading ${section}:`, error);
+                container.innerHTML = `<div class="error-message">Failed to load content. Please try again later.</div>`;
+            } finally {
+                loadMoreBtn.disabled = false;
+                loadMoreBtn.textContent = 'Load More';
+                container.style.opacity = '1';
+            }
+        }
+    
+        // Add this to your DOMContentLoaded event listener
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial content load with delay to prevent rate limiting
+            setTimeout(() => loadContent('trending'), 100);
+            setTimeout(() => loadContent('new'), 1000);
+        });
+    </script>
+    
+   <!--Anime api js end-->
+   
+   <!--Slide js-->
+   
+   
+    <script>
+        // Add this at the beginning of your scripts
+        function setMobileViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+    
+        // Set initial height
+        setMobileViewportHeight();
+    
+        // Reset on resize and orientation change
+        window.addEventListener('resize', setMobileViewportHeight);
+        window.addEventListener('orientationchange', setMobileViewportHeight);
+    </script>
+    
+    <script>
+        // Slideshow functionality
+        document.addEventListener('DOMContentLoaded', async () => {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            
+            // Fetch featured anime for slideshow
+            try {
+                const response = await fetch(`${BASE_URL}/top/anime?limit=3`);
+                const data = await response.json();
+                
+                data.data.forEach((anime, index) => {
+                    const slide = slides[index];
+                    slide.querySelector('img').src = anime.images.jpg.large_image_url;
+                    slide.querySelector('.slide-title').textContent = anime.title;
+                    slide.querySelector('.slide-description').textContent = 
+                        anime.synopsis ? anime.synopsis.substring(0, 150) + '...' : '';
+                });
+                
+                // Show first slide
+                showSlide(0);
+            } catch (error) {
+                console.error('Error loading slideshow:', error);
+            }
+    
+            function showSlide(n) {
+                slides.forEach(slide => slide.classList.remove('active'));
+                dots.forEach(dot => dot.classList.remove('active'));
+                
+                currentSlide = n;
+                if (currentSlide >= slides.length) currentSlide = 0;
+                if (currentSlide < 0) currentSlide = slides.length - 1;
+                
+                slides[currentSlide].classList.add('active');
+                dots[currentSlide].classList.add('active');
+            }
+    
+            // Next/previous controls
+            document.querySelector('.next').addEventListener('click', () => showSlide(currentSlide + 1));
+            document.querySelector('.prev').addEventListener('click', () => showSlide(currentSlide - 1));
+            
+            // Dot controls
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => showSlide(index));
+            });
+    
+            // Auto advance slides
+            setInterval(() => showSlide(currentSlide + 1), 5000);
+        });
+    </script>
+    
+    <!--Slide js end-->
+    
+   <!--Hamburgermenu js-->
+    
+    
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+        
+        hamburgerIcon.addEventListener('click', () => {
+            hamburgerMenu.classList.toggle('active');
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburgerMenu.contains(e.target) && hamburgerMenu.classList.contains('active')) {
+                hamburgerMenu.classList.remove('active');
+            }
+        });
+    
+        // Prevent menu from closing when clicking inside
+        hamburgerMenu.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+    </script>
+    
+    <!--Hamburger menu js end-->
+
+    <script>
+        // Update the intersection observer code
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                } else {
+                    entry.target.classList.remove('in-view');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '50px'
+        });
+        
+        function observeContentBoxes() {
+            const boxes = document.querySelectorAll('.content-box');
+            boxes.forEach(box => {
+                observer.observe(box);
+            });
+        }
+        
+        // Initial observation
+        document.addEventListener('DOMContentLoaded', observeContentBoxes);
+        
+        // Re-run observation when new content is loaded
+        document.addEventListener('contentLoaded', observeContentBoxes);
+    </script>
+
+<script>
+    const searchToggle = document.getElementById('searchToggle');
+    const searchDropdown = document.querySelector('.search-dropdown');
+    const searchBar = document.querySelector('.search-bar');
+    const searchSuggestions = document.querySelector('.search-suggestions');
+
+    // Add the debounce function definition at the top of your search script
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+    
+    // Update the search toggle functionality
+    if (searchToggle && searchDropdown) {
+        searchToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchDropdown.classList.toggle('active');
+            if (searchDropdown.classList.contains('active')) {
+                searchBar.focus();
+            }
+        });
+    }
+    
+    // Update the search results container reference
+    const searchResults = document.querySelector('.search-results');
+    
+    // Update the display search results function
+    function displaySearchResults(results) {
+        if (!searchResults) return;
+        
+        searchResults.innerHTML = results.length ? `
+            <h2>Search Results</h2>
+            <div class="grid-container">
+                ${results.map(anime => `
+                    <div class="content-box" data-anime-id="${anime.mal_id}">
+                        <div class="cover-container">
+                            <img src="${anime.images.jpg.large_image_url}" alt="${anime.title}" class="cover-image">
+                            <div class="play-overlay">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                        <div class="content-details">
+                            <h3 class="title">${anime.title}</h3>
+                            <div class="subtitle-container">
+                                <span class="episode-count">${anime.episodes || '?'} Episodes</span>
+                                <span class="rating">★ ${anime.score || 'N/A'}</span>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        ` : '<div class="no-results">No results found</div>';
+        
+        searchResults.style.display = 'block';
+        searchResults.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Handle search input
+
+        // Add this function before your search event listeners
+        async function searchAnime(query) {
+            try {
+                const response = await fetch(`${BASE_URL}/anime?q=${encodeURIComponent(query)}&sfw=true&limit=8`);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const data = await response.json();
+                return data.data;
+            } catch (error) {
+                console.error('Search error:', error);
+                return [];
+            }
+        }
+
+        // Update suggestions function
+        function updateSuggestions(results) {
+            if (!results.length) {
+                searchSuggestions.innerHTML = '<div class="suggestion-item">No results found</div>';
+                return;
+            }
+
+            searchSuggestions.innerHTML = results.map(anime => `
+                <div class="suggestion-item" data-anime-id="${anime.mal_id}">
+                    <img src="${anime.images.jpg.small_image_url}" alt="${anime.title}">
+                    <div class="suggestion-info">
+                        <div class="suggestion-title">${anime.title}</div>
+                        <div class="suggestion-details">
+                            <span>${anime.type || 'N/A'} • ${anime.episodes || '?'} Episodes</span>
+                            <br>
+                            <span>★ ${anime.score || 'N/A'}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            searchSuggestions.classList.add('active');
+        }
+
+        // Update the handleSearch function
+        const handleSearch = debounce(async (e) => {
+            const query = e.target.value.trim();
+            if (query.length >= 3) {
+                const searchLoading = document.querySelector('.search-loading');
+                if (searchLoading) searchLoading.style.display = 'block';
+                
+                try {
+                    const results = await searchAnime(query);
+                    updateSuggestions(results);
+                } catch (error) {
+                    console.error('Search error:', error);
+                    searchSuggestions.innerHTML = '<div class="suggestion-item">Error occurred while searching</div>';
+                } finally {
+                    if (searchLoading) searchLoading.style.display = 'none';
+                }
+            } else {
+                searchSuggestions.innerHTML = '';
+                searchSuggestions.classList.remove('active');
+            }
+        }, 300);
+        
+        // Update the event listeners
+        searchBar.addEventListener('input', handleSearch);
+        
+        searchBar.addEventListener('keypress', async (e) => {
+            if (e.key === 'Enter') {
+                const query = e.target.value.trim();
+                if (query.length >= 3) {
+                    const results = await searchAnime(query);
+                    displaySearchResults(results);
+                    searchDropdown.classList.remove('active');
+                    searchSuggestions.style.display = 'none';
+                }
+            }
+        });
+
+    
+    searchSuggestions.addEventListener('click', async (e) => {
+        const suggestionItem = e.target.closest('.suggestion-item');
+        if (suggestionItem) {
+            const animeId = suggestionItem.dataset.animeId;
+            try {
+                const response = await fetch(`${BASE_URL}/anime/${animeId}`);
+                const data = await response.json();
+                displaySearchResults([data.data]);
+                searchDropdown.classList.remove('active');
+            } catch (error) {
+                console.error('Error fetching anime details:', error);
+            }
+        }
+    });
+
+   
+    document.addEventListener('click', (e) => {
+        if (!searchDropdown?.contains(e.target) && !searchToggle?.contains(e.target)) {
+            searchDropdown?.classList.remove('active');
+        }
+    });
+</script>
+
+
+
+
+
+
+    </body>  
+    </html>
